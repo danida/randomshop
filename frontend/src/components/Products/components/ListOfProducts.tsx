@@ -5,6 +5,7 @@ import { ProductType, ProductsType } from "../types/ProductType"
 
 export type ListOfProductsProps = {
     products: ProductsType
+
 }
 
 export type ListOfProductsState = {
@@ -12,6 +13,7 @@ export type ListOfProductsState = {
 
 
 export class ListOfProducts extends React.Component<ListOfProductsProps, ListOfProductsState> {
+    
     public static defaultProps = {
         products: [{ id: 1, price: 4 }, { id: 2, price: 5 }]
     }
@@ -19,7 +21,7 @@ export class ListOfProducts extends React.Component<ListOfProductsProps, ListOfP
         super(props)
     }
 
-
+  
     public render() {
         let className = "listOfProducts"
 

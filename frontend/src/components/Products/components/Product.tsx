@@ -1,7 +1,6 @@
 import * as React from "react"
 import {ProductType} from "../types/ProductType"
 
-
 export type ProductProps = {
     item:ProductType
 }

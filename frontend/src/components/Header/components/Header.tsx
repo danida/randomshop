@@ -1,6 +1,6 @@
 import * as React from "react"
-import Image from "../../../module/Image"
-const dotenv = require('dotenv');
+import '../../../styles/header.scss'
+
 
 export type HeaderProps = {
 }
@@ -11,9 +11,6 @@ export type HeaderState = {
  
 class Header extends React.Component<HeaderProps, HeaderState> {
     render() { 
-        const env = dotenv.config().parsed;        
-       // console.log(env.NODE_ENV)
-
         let className="header"
         return (<div className={className}>
             <div className="header__title">
@@ -26,11 +23,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                 <button className="header__menu__shop">
                     Bolt
                 </button>  
-                <Image {...{src:"main_page.jpg"}}></Image>
             </div>
-            
         </div>)
-
     }
 }
  

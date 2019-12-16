@@ -1,0 +1,28 @@
+$bg-color: #DDDDDD; 
+
+.header{
+    display:block;
+    background-color: $bg-color;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+        &__title{
+        background-color: #FFFFFF;
+        font-weight: 600;
+        padding:10px;
+        font-size: 25px;
+    }
+    &__menu{
+        display: flex;
+        flex-direction: row;
+        background-color: $bg-color;
+        padding:10px;
+        &__home{
+            background-color: $bg-color;
+            margin:2px;
+        }
+        &__shop{
+            background-color: $bg-color;
+            margin:2px;
+
+        }
+    }
+}

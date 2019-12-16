@@ -1,16 +1,22 @@
+var dotenv = require('dotenv').config({ path: __dirname + '/.env' });
+var webpack = require('webpack');
+
+
 module.exports = {
-    mode: "production",
+    mode: "development",
+
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx"]
+        extensions: [".ts", ".tsx",  ".js"]
     },
     node: {
         fs: 'empty'
-      },
+    },
+
 
     module: {
         rules: [
@@ -28,9 +34,23 @@ module.exports = {
                 enforce: "pre",
                 test: /\.js$/,
                 loader: "source-map-loader"
+            },
+            //Implementing Sass styles
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    'style-loader',
+                    // Translates CSS into CommonJS
+                    'css-loader',
+                    // Compiles Sass to CSS
+                    'sass-loader',
+                ],
             }
         ]
     },
+
+
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
@@ -39,5 +59,10 @@ module.exports = {
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            "process.env": JSON.stringify(dotenv.parsed)
+        }),
+    ]
 };
