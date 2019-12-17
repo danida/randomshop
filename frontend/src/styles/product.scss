@@ -1,23 +1,60 @@
+
+@keyframes fadeout {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+  
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
 .listOfProducts{
     display: flex;
     flex-direction: row;
     background-color: #FFFFFF;
     height:100%;
-
+    width:100%;
+    overflow: scroll;
+    overflow: hidden;
 }
+
 .product{
-    background-color: #EEEEEE;
-    overflow:hidden;
-    text-overflow: ellipsis;
-    word-break: break-all;
-    width: 5vw;
-    height: 5vw;
-    min-width:200px;
-    min-height: 200px;
-    margin:5px;
-    div{
-        display:block;
-        width: 250px;
-        background-color: inherit;
+    display:none;
+    opacity:0;
+    animation:fadeout  1000ms;
+
+    &--visible{
+        animation: fadein  1000ms;
+        opacity: 1;
+        background-color: #EEEEEE;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        width: 5vw;
+        height: 5vw;
+        min-width:200px;
+        min-height: 200px;
+        margin:5px;
+
+        div{
+            display:block;
+            width: 250px;
+            background-color:inherit;
+        }
     }
+
+
 }

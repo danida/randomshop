@@ -1895,7 +1895,7 @@ exports.push([module.i, ".header {\n  display: block;\n  background-color: #DDDD
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = module.exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".listOfProducts {\n  display: flex;\n  flex-direction: row;\n  background-color: #FFFFFF;\n  height: 100%; }\n\n.product {\n  background-color: #EEEEEE;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  word-break: break-all;\n  width: 5vw;\n  height: 5vw;\n  min-width: 200px;\n  min-height: 200px;\n  margin: 5px; }\n  .product div {\n    display: block;\n    width: 250px;\n    background-color: inherit; }\n", ""]);
+exports.push([module.i, "@keyframes fadeout {\n  0% {\n    opacity: 1;\n    transform: scale(1); }\n  100% {\n    opacity: 0;\n    transform: scale(0.9); } }\n\n@keyframes fadein {\n  0% {\n    opacity: 0;\n    transform: scale(1.1); }\n  100% {\n    opacity: 1;\n    transform: scale(1); } }\n\n.listOfProducts {\n  display: flex;\n  flex-direction: row;\n  background-color: #FFFFFF;\n  height: 100%;\n  width: 100%;\n  overflow: scroll;\n  overflow: hidden; }\n\n.product {\n  display: none;\n  opacity: 0;\n  animation: fadeout  1000ms; }\n  .product--visible {\n    animation: fadein  1000ms;\n    opacity: 1;\n    background-color: #EEEEEE;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    word-break: break-all;\n    width: 5vw;\n    height: 5vw;\n    min-width: 200px;\n    min-height: 200px;\n    margin: 5px; }\n    .product--visible div {\n      display: block;\n      width: 250px;\n      background-color: inherit; }\n", ""]);
 
 
 /***/ }),
@@ -2684,13 +2684,37 @@ __webpack_require__.r(__webpack_exports__);
 class ListOfProducts extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     constructor(props) {
         super(props);
+        this.onScrollLeft = () => {
+            if (this.state.firstVisible > 0) {
+                this.setState({
+                    firstVisible: this.state.firstVisible - 1,
+                    lastVisible: this.state.lastVisible - 1,
+                });
+            }
+            console.log(this.state);
+        };
+        this.onScrollRight = () => {
+            if (this.state.lastVisible <= this.props.products.length - 1) {
+                this.setState({
+                    firstVisible: this.state.firstVisible + 1,
+                    lastVisible: this.state.lastVisible + 1,
+                });
+            }
+            console.log(this.state);
+        };
+        this.state = ({
+            firstVisible: 0,
+            lastVisible: 4,
+        });
     }
     render() {
         let className = "listOfProducts";
-        console.log(this.props.products);
-        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: className }, this.props.products.map((product) => {
-            return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Product__WEBPACK_IMPORTED_MODULE_1__["default"], Object.assign({}, { item: product }));
-        })));
+        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: className },
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { onClick: this.onScrollLeft }, "balra"),
+            this.props.products.map((product, index) => {
+                return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Product__WEBPACK_IMPORTED_MODULE_1__["default"], Object.assign({}, { visible: index >= this.state.firstVisible && this.state.lastVisible > index ? true : false, item: product }));
+            }),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { onClick: this.onScrollRight }, "jobbra")));
     }
 }
 /* harmony default export */ __webpack_exports__["default"] = (ListOfProducts);
@@ -2713,6 +2737,9 @@ __webpack_require__.r(__webpack_exports__);
 class Product extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     render() {
         let className = "product";
+        if (this.props.visible) {
+            className += "--visible";
+        }
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: className },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
                 "price:",
