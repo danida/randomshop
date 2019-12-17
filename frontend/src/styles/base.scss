@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya');
+$fa-font-path: "~font-awesome/fonts";
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+
 
 * {
     margin: auto;
     background-color: #FFFFFF;
     font-family: 'Alegreya';
 }
+
 
 .image {
     display:block;

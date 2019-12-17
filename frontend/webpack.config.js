@@ -10,7 +10,7 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx",  ".js"]
+        extensions: [".ts", ".tsx", ".js"]
     },
     node: {
         fs: 'empty'
@@ -45,7 +45,19 @@ module.exports = {
                     // Compiles Sass to CSS
                     'sass-loader',
                 ],
-            }
+            },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
+            },
+            {
+                test: /\.(png|gif|jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)?/,
+                loader: "file-loader",
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/',    // where the fonts will go
+                }
+            },
         ]
     },
 
