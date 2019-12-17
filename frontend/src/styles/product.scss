@@ -1,9 +1,23 @@
 .listOfProducts{
     display: flex;
     flex-direction: row;
+    background-color: #FFFFFF;
+    height:100%;
 
 }
 .product{
-    background-color: #DDDDDD;
-    display: inline-block;
+    background-color: #EEEEEE;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    width: 5vw;
+    height: 5vw;
+    min-width:200px;
+    min-height: 200px;
+    margin:5px;
+    div{
+        display:block;
+        width: 250px;
+        background-color: inherit;
+    }
 }

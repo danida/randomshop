@@ -23,7 +23,6 @@ export class Container extends React.Component<ContainerProps,ContainerState> {
         return (<div>
                 <Header />
                 <Image {...{src:".."+process.env.PUBLIC_URL+"main_page.jpg"}}></Image>
-
                 <Products/>
                 </div> 
           );

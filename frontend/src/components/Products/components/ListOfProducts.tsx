@@ -13,10 +13,7 @@ export type ListOfProductsState = {
 
 
 export class ListOfProducts extends React.Component<ListOfProductsProps, ListOfProductsState> {
-    
-    public static defaultProps = {
-        products: [{ id: 1, price: 4 }, { id: 2, price: 5 }]
-    }
+  
     constructor(props: ListOfProductsProps) {
         super(props)
     }
@@ -24,7 +21,7 @@ export class ListOfProducts extends React.Component<ListOfProductsProps, ListOfP
   
     public render() {
         let className = "listOfProducts"
-
+        console.log(this.props.products)
         return (<div className={className}>{
             this.props.products.map((product: ProductType) => {
                 return <Product {...{ item: product }} />

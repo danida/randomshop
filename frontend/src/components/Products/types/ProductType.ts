@@ -3,8 +3,8 @@ export type ProductsType = Array<ProductType>
 export type ProductType = {
     id:number,
     price:number,
-    color:string,
-    description:string,
+    color?:string | null,
+    description?:string| null,
     name:string,
-    size:number,
+    size?:number | null,
 }

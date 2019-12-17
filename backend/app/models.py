@@ -17,7 +17,7 @@ class Product(db.Model):
 class  Stock(db.Model):
     __tablename__ = 'item'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    item_id=db.Column(db.Integer,db.ForeignKey('item.id'))
+    item_id=db.Column(db.Integer,db.ForeignKey('product.id'))
     count = db.Column(db.Integer)
 
     def as_dict(self):
