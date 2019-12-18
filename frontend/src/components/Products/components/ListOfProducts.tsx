@@ -59,13 +59,13 @@ export class ListOfProducts extends React.Component<ListOfProductsProps, ListOfP
         let className = "listOfProducts"
         return (<div className={className}>
             <div className="iconWrapper" onClick={this.onScrollLeft}>
-                <FontAwesomeIcon icon={faChevronLeft} />
+                <FontAwesomeIcon size="2x" icon={faChevronLeft} />
             </div>{
                 this.props.products.map((product: ProductType, index: number) => {
                     return <Product {...{ visible: index >= this.state.firstVisible && this.state.lastVisible > index ? true : false, item: product }} />
                 })}
             <div className="iconWrapper" onClick={this.onScrollRight}>
-                <FontAwesomeIcon icon={faChevronRight} />
+                <FontAwesomeIcon size="2x" icon={faChevronRight} />
             </div>
         </div>
         );

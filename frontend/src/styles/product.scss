@@ -30,12 +30,12 @@
     align-items: center; 
 
     .iconWrapper{
-      width: 5vw;
       height: 5vw;
-      min-width:200px;
-      min-height: 200px;
       text-align: center;
       display:inline-flex;
+      flex:1;
+      min-height: 200px;
+      border:solid 1px #EEEEEE;
 
     }
 
@@ -46,7 +46,7 @@
     display:none;
     opacity:0;
     animation:fadeout  1000ms;
-    
+    flex:1;
     &--visible{
         animation: fadein  1000ms;
         opacity: 1;
@@ -59,6 +59,7 @@
         min-width:200px;
         min-height: 200px;
         margin:5px;
+        border-radius: 10px;
 
         div{
             display:block;
