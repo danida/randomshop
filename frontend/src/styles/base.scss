@@ -4,16 +4,18 @@ $fa-font-path: "~font-awesome/fonts";
 
 
 * {
-    margin: auto;
-    background-color: #FFFFFF;
+    background-color: #F0F0F0;
     font-family: 'Alegreya';
 }
 
 #root{
     min-width: 1024px;
+    max-width: 2048px;
 }
 
 .image {
-    display:block;
-    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }

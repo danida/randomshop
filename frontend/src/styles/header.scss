@@ -1,28 +1,65 @@
-$bg-color: #DDDDDD; 
 
 .header{
     display:block;
-    background-color: $bg-color;
+    left:0px;
+    top:0px;
+    position: fixed;
+    width:100%;
     font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
         &__title{
-        background-color: #FFFFFF;
+        display:flex;
         font-weight: 600;
         padding:10px;
         font-size: 25px;
+        .image{
+            width:30px;
+            height:30px;
+        }
+
     }
     &__menu{
         display: flex;
         flex-direction: row;
-        background-color: $bg-color;
-        padding:10px;
+        padding:5px;
+        background-color: #c0c0c0;
         &__home{
-            background-color: $bg-color;
-            margin:2px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            margin:0px;
+            padding:5px;
+            background-color: #c0c0c0;
+
+            &:hover{
+                color: #CCCCCC;
+            }
         }
         &__shop{
-            background-color: $bg-color;
-            margin:2px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            margin:0px;
+            padding:5px;
+            background-color: #c0c0c0;
 
+            &:hover{
+                color: #CCCCCC;
+            }
+        }
+        &__contacts{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            margin:0px;
+            padding:5px;
+            background-color: #c0c0c0;
+
+            &:hover{
+                color: #CCCCCC;
+            }
         }
     }
 }
