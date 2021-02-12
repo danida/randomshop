@@ -21,6 +21,7 @@ class Product extends React.Component<ProductProps, ProductState> {
                 <div>price:{this.props.item.price}</div>
                 <div>color:{this.props.item.color}</div>
                 <div>description:{this.props.item.description}</div>
+                <div>name:{this.props.item.name}</div>
             </div>  );
     }
 }

@@ -1,0 +1,20 @@
+{
+    "sshfs.configs": [
+        {
+            "root": "/tmp",
+            "host": "localhost",
+            "port": 22,
+            "username": "root",
+            "password": "CorrectHorseBatteryStaple",
+            "name": "unnamed1"
+        },
+        {
+            "root": "/opt",
+            "host": "10.1.130.26",
+            "port": 22,
+            "username": "root",
+            "password": "asdQWE123",
+            "name": "unnamed2"
+        }
+    ]
+}

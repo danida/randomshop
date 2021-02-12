@@ -30,18 +30,17 @@
     align-items: center; 
 
     .iconWrapper{
-      height: 5vw;
       text-align: center;
       display:flex;
       justify-content: center;
       align-items: center;
       flex:1;
-      min-height: 200px;
-      border:solid 1px #EEEEEE;
+      background-color: white;
 
+      .fontawesomeicon{
+        background-color: white;
+      }
     }
-
-
 }
 
 .product{

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ProductsType } from '../components/Products/types/ProductType';
+import { ProductsType } from '../components/Main/types/ProductType';
 
 export const getProducts = async (): Promise<ProductsType> => {
   let url = process.env.API_URL + "products"

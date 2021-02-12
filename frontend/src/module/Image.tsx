@@ -2,7 +2,8 @@ import * as React from "react"
 
 
 export type ImageProps = {
-    src:string
+    src:string,
+    className:string
 }
  
 export type ImageState = {
@@ -11,9 +12,8 @@ export type ImageState = {
  
 class Product extends React.Component<ImageProps, ImageState> {
     render() { 
-        let className="image"
 
-        return ( <img  className = {className} src={this.props.src}></img>  );
+        return ( <div className = {this.props.className}><img   src={this.props.src}></img></div>  );
     }
 }
  
